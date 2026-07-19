@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankita Gautam - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --accent-color: #0284c7;
+            --text-color: #334155;
+            --heading-color: #0f172a;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            color: var(--heading-color);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        header .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        header .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        header .contact-info span {
+            display: flex;
+            align-items: center;
+        }
+
+        header .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        header .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            color: var(--heading-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 4px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .summary p {
+            font-size: 14.5px;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .skills-grid .skill-category {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid strong {
+            color: var(--heading-color);
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .experience-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        .experience-header .company {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .experience-header .date-location {
+            font-size: 13px;
+            color: #64748b;
+            text-align: right;
+        }
+
+        ul.bullets {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        ul.bullets li {
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        ul.bullets li strong {
+            color: var(--heading-color);
+        }
+
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .project-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15.5px;
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        .project-header .date {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .education-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15.5px;
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        .education-header .school {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .education-header .date-location {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* Print styling optimized for single-page layout */
+        @media print {
+            body {
+                background-color: transparent;
+                padding: 0;
+                color: #000000;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+                border-top: none;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            section {
+                margin-bottom: 18px;
+            }
+
+            section h2 {
+                font-size: 15px;
+                margin-bottom: 10px;
+                border-bottom-color: #000;
+            }
+
+            .experience-item, .project-item, .education-item {
+                margin-bottom: 12px;
+                page-break-inside: avoid;
+            }
+
+            .experience-header h3, .project-header h3, .education-header h3 {
+                font-size: 14px;
+            }
+
+            ul.bullets li {
+                font-size: 13px;
+                margin-bottom: 4px;
+            }
+
+            .skills-grid {
+                font-size: 13px;
+            }
+
+            header {
+                margin-bottom: 18px;
+                padding-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <h1>Ankita Gautam</h1>
+            <div class="subtitle">Shopify & WordPress Developer</div>
+            <div class="contact-info">
+                <span>📍 Kanpur, Uttar Pradesh, India</span>
+                <span>📞 <a href="tel:+918543834876">+91 8543834876</a></span>
+                <span>✉️ <a href="mailto:gautamankita2683@gmail.com">gautamankita2683@gmail.com</a></span>
+                <span>🖥️ <a href="https://github.com/gautamankita2683" target="_blank">GitHub</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/gautamankita2683" target="_blank">LinkedIn</a></span>
+                <span>🏆 <a href="https://leetcode.com/u/gautamankita2683" target="_blank">LeetCode</a></span>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>Shopify and WordPress e-commerce developer with extensive expertise in platform customization, custom theme development, and digital storefront optimization. Proficient in HTML5, CSS3, JavaScript, Shopify Liquid, and PHP, with a proven track record of building high-converting, responsive, and performance-optimized e-commerce solutions. Skilled in checkout customizations, payment gateway integrations, custom page builders, and multi-platform store management. Backed by a strong technical foundation in Python, Django, and database systems.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>Web & E-Commerce:</strong> Shopify, WordPress, WooCommerce, Liquid, PHP
+                </div>
+                <div class="skill-category">
+                    <strong>Frontend:</strong> HTML5, CSS3, JavaScript, Flexbox/Grid, Bootstrap, Responsive Design
+                </div>
+                <div class="skill-category">
+                    <strong>Backend & DB:</strong> Python, Django, Django ORM, RESTful APIs, PostgreSQL, SQL, SQLite
+                </div>
+                <div class="skill-category">
+                    <strong>Marketing Tech:</strong> Klaviyo, Mailchimp, Facebook Pixel, Google Analytics, CRO
+                </div>
+                <div class="skill-category">
+                    <strong>Tools & Workflows:</strong> Git, GitHub, VS Code, Figma, Adobe XD, JIRA, Agile
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Shopify & WordPress Developer</h3>
+                        <span class="company">Adverta Pvt. Ltd.</span>
+                    </div>
+                    <div class="date-location">
+                        Dec 2025 – Present<br>Kanpur, Uttar Pradesh
+                    </div>
+                </div>
+                <ul class="bullets">
+                    <li><strong>weareadverta.com:</strong> Developed and customized the agency's primary WordPress site using Astra and Elementor. Authored custom CSS tweaks to enhance animations and layouts, ensuring complete responsive coverage.</li>
+                    <li><strong>halfpe.com:</strong> Programmed customization elements for a multi-category discount store on Shopify (Prestige Theme). Configured custom cart-drawers, custom layouts using EComposer page builder, and integrated UpPromote and Webkul Multi-Vendor modules.</li>
+                    <li>Reduced client website loading times by 57% (averaging 2.8s down to 1.2s) through lazy loading, assets minification, and CSS refactoring, which helped increase client conversion rates by 40%.</li>
+                    <li>Integrated e-commerce marketing suites including Klaviyo and Mailchimp, and custom tracking pixels (Facebook Pixel, Google Analytics) to drive conversion rate optimization (CRO).</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Shopify & WordPress Developer</h3>
+                        <span class="company">4 Fox Business Solution Pvt. Ltd.</span>
+                    </div>
+                    <div class="date-location">
+                        Feb 2025 – Nov 2025<br>Kanpur, Uttar Pradesh
+                    </div>
+                </div>
+                <ul class="bullets">
+                    <li><strong>sandwalkfootwear.com:</strong> Managed theme sections customization and launched a premium leather footwear Shopify store. Programmed layouts highlighting their 40-year heritage and configured native checkouts.</li>
+                    <li><strong>stepsoft.in:</strong> Developed and launched a Shopify store for an ethnic footwear retailer. Built specialized Liquid collection templates with multi-attribute filtering (size, color, material) for Mojaris and Juttis.</li>
+                    <li><strong>roxxindia.com:</strong> Customized the Shopify Dawn theme for a dynamic mobile covers and accessories store. Coded custom scripts for bundle deals, sticky checkout bars, and cash-on-delivery form handling.</li>
+                    <li>Achieved 99.5% cross-browser compatibility by developing pixel-perfect layouts using HTML5/CSS3/JavaScript, testing layouts across diverse mobile, desktop, and tablet platforms.</li>
+                    <li>Integrated third-party applications (Gorgias, Loox, Yotpo, AfterShip) and handled custom API connections for smooth inventory sync, delivering zero defects in final QA testing.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Python Developer Intern</h3>
+                        <span class="company">Info2Tech Private Limited</span>
+                    </div>
+                    <div class="date-location">
+                        Apr 2024 – Jun 2024<br>Kanpur, Uttar Pradesh
+                    </div>
+                </div>
+                <ul class="bullets">
+                    <li>Developed scalable backend modules using Python and Django REST Framework, integrating PostgreSQL as the primary database.</li>
+                    <li>Enhanced queries by 35% using Django ORM select_related/prefetch_related optimizations and implementing Redis cache layers.</li>
+                    <li>Implemented algorithmic workflows for data sorting and processing, improving the overall script performance by 2x.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projects & Achievements</h2>
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Multi-Brand E-Commerce Store Deployments</h3>
+                    <span class="date">2024 – Present</span>
+                </div>
+                <ul class="bullets">
+                    <li>Designed, customized, and deployed over 15 distinct e-commerce stores across Shopify and WordPress platforms, creating custom themes, checkout widgets, and admin panels.</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Full-Stack E-Commerce Application (Django)</h3>
+                    <span class="date">2024</span>
+                </div>
+                <ul class="bullets">
+                    <li>Engineered a custom Python/Django store featuring Stripe integration, JWT auth, shopping cart system, and PostgreSQL inventory tracking.</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>LeetCode Problem Solving</h3>
+                    <span class="date">2023 – Present</span>
+                </div>
+                <ul class="bullets">
+                    <li>Successfully solved 180+ problems in data structures and algorithms, focusing on arrays, dynamic programming, and graphs.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <h3>Master of Computer Applications (MCA)</h3>
+                        <span class="school">Dr. A.P.J. Abdul Kalam Technical University</span>
+                    </div>
+                    <div class="date-location">
+                        Graduated: Oct 2025<br>Lucknow, Uttar Pradesh
+                    </div>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <h3>Bachelor of Science in Information Technology (B.Sc. IT)</h3>
+                        <span class="school">Chhatrapati Shahu Ji Maharaj University</span>
+                    </div>
+                    <div class="date-location">
+                        Graduated: Jan 2022<br>Kanpur, Uttar Pradesh
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

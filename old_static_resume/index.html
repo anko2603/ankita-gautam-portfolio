@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankita Gautam | Shopify & WordPress Developer Portfolio</title>
+    <meta name="description" content="Shopify & WordPress developer specializing in custom theme design, liquid customization, plugin integration, and high-performance e-commerce storefronts. Check out my work.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Header / Navbar -->
+    <header class="navbar" id="main-header">
+        <div class="nav-container">
+            <a href="#" class="logo" id="logo-brand">
+                <span class="logo-accent">&lt;</span>Ankita<span class="logo-accent">/&gt;</span>
+            </a>
+            <nav class="nav-menu" id="nav-links">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-btn" aria-label="Toggle Theme">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="resume.html" target="_blank" class="resume-btn" id="resume-download-btn">Resume</a>
+                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Open menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-nav" id="mobile-nav-menu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#experience" class="mobile-link">Experience</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="resume.html" target="_blank" class="mobile-resume-btn">Resume</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="grid-background"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="welcome-tag">Welcome to my Portfolio</span>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight-text">Ankita Gautam</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    I am a <span class="typing-text" id="typing-sub"></span><span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    E-Commerce Developer & Backend Engineer based in India. I specialize in building custom Shopify stores, styling high-performance WordPress sites, and crafting interactive e-commerce shopping workflows that scale.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="primary-btn">View My Work</a>
+                    <a href="#contact" class="secondary-btn">Let's Connect</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/gautamankita2683" target="_blank" aria-label="GitHub" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/gautamankita2683" target="_blank" aria-label="LinkedIn" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://leetcode.com/u/gautamankita2683" target="_blank" aria-label="LeetCode" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="lc-svg"><path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.77 9.77a1.375 1.375 0 0 0 0 1.942l4 4a1.375 1.375 0 0 0 1.94 0l9.77-9.77a1.375 1.375 0 0 0 0-1.942l-4-4A1.374 1.374 0 0 0 13.483 0zM4.057 11.232l9.043-9.043 3.086 3.086-9.042 9.042-3.087-3.085zm12.016 1.488a5.534 5.534 0 0 1-5.53 5.53 5.534 5.534 0 0 1-5.53-5.53c0-1.285.45-2.47 1.202-3.418L4.85 7.936A7.472 7.472 0 0 0 2.543 12.72c0 4.148 3.36 7.51 7.509 7.51 4.148 0 7.51-3.362 7.51-7.51a7.461 7.461 0 0 0-2.308-4.783l-1.365 1.365a5.533 5.533 0 0 1 1.204 3.418zm2.646-6.177L17.354 7.91A9.452 9.452 0 0 1 20.05 12.72c0 5.253-4.257 9.51-9.51 9.51-5.253 0-9.51-4.257-9.51-9.51A9.452 9.452 0 0 1 3.73 7.91L2.365 6.543A11.439 11.439 0 0 0 .543 12.72c0 6.353 5.158 11.51 11.509 11.51 6.352 0 11.51-5.157 11.51-11.51a11.439 11.439 0 0 0-1.822-6.177z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-globe"></div>
+                <div class="visual-card">
+                    <div class="visual-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="tab-title">ankita.liquid</span>
+                    </div>
+                    <div class="visual-body">
+                        <pre><code><span class="code-keyword">assign</span> shopify_dev = <span class="code-string">"Ankita"</span>
+<span class="code-keyword">if</span> store.needs_customization
+  <span class="code-keyword">include</span> <span class="code-string">'custom-layout'</span>
+  <span class="code-keyword">assign</span> conversion_rate = conversion_rate | <span class="code-keyword">plus</span>: <span class="code-number">40</span>
+<span class="code-keyword">endif</span>
+<span class="code-keyword">render</span> <span class="code-string">'checkout-success'</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container scroll-reveal">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-info">
+                    <h3>Building High-Converting Storefronts</h3>
+                    <p>
+                        I am a full-time E-Commerce Developer based in Kanpur, India. With hands-on experience developing and deploying online portals, I specialize in the architecture, coding, and customization of Shopify and WordPress platforms.
+                    </p>
+                    <p>
+                        Whether it is creating custom cart modules for Shopify discount platforms, designing pixel-perfect pages using WordPress frameworks, or designing full-stack e-commerce systems from scratch, I bridge the gap between design templates and high-converting code.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="hl-number">40%+</span>
+                            <span class="hl-label">CRO Improvements</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="hl-number">1.2s</span>
+                            <span class="hl-label">Avg Store Load Time</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="hl-number">15+</span>
+                            <span class="hl-label">Successful Stores Live</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details">
+                    <div class="detail-card">
+                        <h4>Education</h4>
+                        <ul class="detail-list">
+                            <li>
+                                <strong>Master of Computer Applications (MCA)</strong>
+                                <span class="detail-sub">Dr. A.P.J. Abdul Kalam Technical University (2025)</span>
+                            </li>
+                            <li>
+                                <strong>B.Sc. Information Technology</strong>
+                                <span class="detail-sub">Chhatrapati Shahu Ji Maharaj University (2022)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="detail-card">
+                        <h4>Problem Solving</h4>
+                        <p>
+                            Active on LeetCode with <strong>180+ solved algorithmic problems</strong> across data structures, graph theory, and dynamic programming. I apply logic-driven practices to e-commerce integrations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container scroll-reveal">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <!-- Skill Card 1 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Shopify Development</h3>
+                    <ul class="skill-tags">
+                        <li>Liquid Templates</li>
+                        <li>Prestige / Dawn Customization</li>
+                        <li>Cart & Checkout Layouts</li>
+                        <li>Shopify APIs</li>
+                        <li>App Integrations (Webkul, Loox)</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                    </div>
+                    <h3>WordPress Core</h3>
+                    <ul class="skill-tags">
+                        <li>Astra & Custom Themes</li>
+                        <li>Elementor Customization</li>
+                        <li>WooCommerce Architecture</li>
+                        <li>PHP Development</li>
+                        <li>Plugin Configuration</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><code class="code-tags">&lt;/&gt;</code><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <h3>Frontend Engineering</h3>
+                    <ul class="skill-tags">
+                        <li>HTML5 & semantic structure</li>
+                        <li>CSS3 & responsive animation</li>
+                        <li>Flexbox / Grid layouts</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Cross-Browser QA testing</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"></path></svg>
+                    </div>
+                    <h3>Backend & Databases</h3>
+                    <ul class="skill-tags">
+                        <li>Python & Django</li>
+                        <li>REST API design</li>
+                        <li>PostgreSQL & SQL</li>
+                        <li>ORM Optimizations</li>
+                        <li>Redis Caching</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 5 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                    </div>
+                    <h3>Marketing Tech</h3>
+                    <ul class="skill-tags">
+                        <li>Klaviyo / Mailchimp</li>
+                        <li>Facebook Pixel</li>
+                        <li>Google Analytics 4</li>
+                        <li>UpPromote Affiliate System</li>
+                        <li>CRO Automations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container scroll-reveal">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-desc">Click on any project to view key highlights and implementation details.</p>
+            
+            <!-- Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="shopify">Shopify</button>
+                <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="project-grid" id="project-container">
+                <!-- Project 1: halfpe.com -->
+                <div class="project-card" data-category="shopify" data-project="halfpe">
+                    <div class="project-card-header">
+                        <span class="project-tag">Shopify</span>
+                        <h3 class="project-card-title">halfpe.com</h3>
+                    </div>
+                    <p class="project-card-excerpt">
+                        High-traffic online discount store utilizing Prestige theme customization, Webkul Multi-Vendor, and custom cart-drawers.
+                    </p>
+                    <span class="view-detail-link">View Implementation →</span>
+                </div>
+
+                <!-- Project 2: weareadverta.com -->
+                <div class="project-card" data-category="wordpress" data-project="weareadverta">
+                    <div class="project-card-header">
+                        <span class="project-tag">WordPress</span>
+                        <h3 class="project-card-title">weareadverta.com</h3>
+                    </div>
+                    <p class="project-card-excerpt">
+                        Growth and marketing agency website, built using Astra theme and Elementor Page Builder with extensive CSS customizations.
+                    </p>
+                    <span class="view-detail-link">View Implementation →</span>
+                </div>
+
+                <!-- Project 3: sandwalkfootwear.com -->
+                <div class="project-card" data-category="shopify" data-project="sandwalk">
+                    <div class="project-card-header">
+                        <span class="project-tag">Shopify</span>
+                        <h3 class="project-card-title">sandwalkfootwear.com</h3>
+                    </div>
+                    <p class="project-card-excerpt">
+                        Storefront for a premium leather footwear brand, featuring fully customized theme sections and checkout configurations.
+                    </p>
+                    <span class="view-detail-link">View Implementation →</span>
+                </div>
+
+                <!-- Project 4: stepsoft.in -->
+                <div class="project-card" data-category="shopify" data-project="stepsoft">
+                    <div class="project-card-header">
+                        <span class="project-tag">Shopify</span>
+                        <h3 class="project-card-title">stepsoft.in</h3>
+                    </div>
+                    <p class="project-card-excerpt">
+                        E-commerce retail store for traditional Kolhapuris and mojari sandals, configured with multi-attribute variants.
+                    </p>
+                    <span class="view-detail-link">View Implementation →</span>
+                </div>
+
+                <!-- Project 5: roxxindia.com -->
+                <div class="project-card" data-category="shopify" data-project="roxxindia">
+                    <div class="project-card-header">
+                        <span class="project-tag">Shopify</span>
+                        <h3 class="project-card-title">roxxindia.com</h3>
+                    </div>
+                    <p class="project-card-excerpt">
+                        Mobile accessories storefront built with customized Dawn theme, sticky checkouts, and custom cash-on-delivery forms.
+                    </p>
+                    <span class="view-detail-link">View Implementation →</span>
+                </div>
+
+                <!-- Project 6: Full Stack App -->
+                <div class="project-card" data-category="fullstack" data-project="django-ecommerce">
+                    <div class="project-card-header">
+                        <span class="project-tag">Python & Django</span>
+                        <h3 class="project-card-title">Full-Stack E-Commerce</h3>
+                    </div>
+                    <p class="project-card-excerpt">
+                        Django and PostgreSQL e-commerce portal from scratch, featuring secure payment gateways and administrative control dashboards.
+                    </p>
+                    <span class="view-detail-link">View Implementation →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience-section" id="experience">
+        <div class="container scroll-reveal">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-header">
+                            <span class="timeline-company">Adverta Pvt. Ltd.</span>
+                            <span class="timeline-date">Dec 2025 – Present</span>
+                        </div>
+                        <h3 class="timeline-title">Shopify & WordPress Developer</h3>
+                        <ul class="timeline-details">
+                            <li>Optimized load times by 57% across 12+ stores, using CSS minification, lazy loading, and asset tuning.</li>
+                            <li>Integrated Klaviyo email flows and Facebook Pixels to configure client conversion rate optimizations.</li>
+                            <li>Engineered theme customizations for prestige Shopify clients and elementor-based WP portals.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-header">
+                            <span class="timeline-company">4 Fox Business Solution Pvt. Ltd.</span>
+                            <span class="timeline-date">Feb 2025 – Nov 2025</span>
+                        </div>
+                        <h3 class="timeline-title">Shopify & WordPress Developer</h3>
+                        <ul class="timeline-details">
+                            <li>Launched and structured theme layouts for premium footwear and accessories clients.</li>
+                            <li>Constructed cross-browser layouts utilizing HTML5, CSS3, and modern JS with 99.5% compatibility.</li>
+                            <li>Connected third-party applications (AfterShip, Gorgias, Yotpo) and built stable API routines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-header">
+                            <span class="timeline-company">Info2Tech Private Limited</span>
+                            <span class="timeline-date">Apr 2024 – Jun 2024</span>
+                        </div>
+                        <h3 class="timeline-title">Python Developer Intern</h3>
+                        <ul class="timeline-details">
+                            <li>Engineered REST APIs using Django REST framework and optimized database queries by 35%.</li>
+                            <li>Implemented Redis cache and database indexing strategies for PostgreSQL backend systems.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container scroll-reveal">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p>I am open to new opportunities, freelance contracts, or talking about store optimization. Drop a message!</p>
+                    <div class="info-details">
+                        <div class="info-link-item">
+                            <span class="icon">📍</span>
+                            <span>Kanpur, Uttar Pradesh, India</span>
+                        </div>
+                        <div class="info-link-item">
+                            <span class="icon">✉️</span>
+                            <a href="mailto:gautamankita2683@gmail.com">gautamankita2683@gmail.com</a>
+                        </div>
+                        <div class="info-link-item">
+                            <span class="icon">📞</span>
+                            <a href="tel:+918543834876">+91 8543834876</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-card">
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project Proposal / Shopify Setup">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Describe your store customization project details here..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="send-msg-btn">Send Message</button>
+                    </form>
+                    <div class="form-feedback hidden" id="feedback-msg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Ankita Gautam. All rights reserved.</p>
+            <p>Designed and Built by Ankita Gautam</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal Dialog -->
+    <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="close-modal-btn" aria-label="Close details">&times;</button>
+            <div class="modal-body" id="modal-content-area">
+                <!-- Content generated dynamically in script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Script -->
+    <script src="script.js"></script>
+</body>
+</html>

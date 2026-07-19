@@ -1,6 +1,10 @@
 /* Reset and Global Styles */
 :root {
-    /* Transitions */
+    /* Fonts */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Transition speeds */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.4s ease;
     --transition-slow: 0.6s ease;
@@ -51,7 +55,7 @@ body.light-theme {
 }
 
 body {
-    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-primary);
     overflow-x: hidden;
@@ -60,7 +64,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-weight: 600;
 }
 
@@ -109,7 +113,7 @@ h1, h2, h3, h4 {
 }
 
 .logo {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 24px;
     font-weight: 700;
     color: var(--text-primary);
@@ -129,7 +133,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-link {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 500;
     color: var(--text-secondary);
@@ -200,24 +204,16 @@ body.light-theme .moon-icon { display: block; }
 
 /* Buttons */
 .resume-btn {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 14px;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--bg-color);
     background-color: var(--accent-color);
     border: 1px solid var(--accent-color);
     padding: 8px 18px;
     border-radius: 6px;
     text-decoration: none;
-    text-align: center;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-body.light-theme .resume-btn {
-    color: #ffffff;
-}
-body.dark-theme .resume-btn {
-    color: #090d16;
 }
 
 .resume-btn:hover {
@@ -257,12 +253,8 @@ body.dark-theme .resume-btn {
     box-shadow: 0 10px 15px var(--shadow-color);
 }
 
-.mobile-nav.open {
-    display: flex;
-}
-
 .mobile-link {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 16px;
     font-weight: 500;
     color: var(--text-secondary);
@@ -277,7 +269,7 @@ body.dark-theme .resume-btn {
 
 .mobile-resume-btn {
     text-align: center;
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 600;
     color: var(--bg-color);
@@ -285,13 +277,6 @@ body.dark-theme .resume-btn {
     padding: 10px 0;
     border-radius: 6px;
     text-decoration: none;
-}
-
-body.light-theme .mobile-resume-btn {
-    color: #ffffff;
-}
-body.dark-theme .mobile-resume-btn {
-    color: #090d16;
 }
 
 /* Hero Section */
@@ -317,7 +302,7 @@ body.dark-theme .mobile-resume-btn {
 }
 
 .welcome-tag {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 14px;
     font-weight: 600;
     color: var(--accent-color);
@@ -345,7 +330,7 @@ body.dark-theme .mobile-resume-btn {
 }
 
 .hero-subtitle {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(18px, 2.5vw, 32px);
     font-weight: 500;
     color: var(--text-secondary);
@@ -382,7 +367,7 @@ body.dark-theme .mobile-resume-btn {
 }
 
 .primary-btn, .secondary-btn {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 600;
     text-decoration: none;
@@ -396,13 +381,6 @@ body.dark-theme .mobile-resume-btn {
     color: var(--bg-color);
     background-color: var(--accent-color);
     border: 1px solid var(--accent-color);
-}
-
-body.light-theme .primary-btn {
-    color: #ffffff;
-}
-body.dark-theme .primary-btn {
-    color: #090d16;
 }
 
 .primary-btn:hover {
@@ -591,7 +569,7 @@ body.dark-theme .primary-btn {
 
 .hl-number {
     display: block;
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 26px;
     font-weight: 700;
     color: var(--accent-color);
@@ -724,7 +702,7 @@ body.dark-theme .primary-btn {
 }
 
 .filter-btn {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 14px;
     font-weight: 500;
     color: var(--text-secondary);
@@ -748,13 +726,6 @@ body.dark-theme .primary-btn {
     font-weight: 600;
 }
 
-body.light-theme .filter-btn.active {
-    color: #ffffff;
-}
-body.dark-theme .filter-btn.active {
-    color: #090d16;
-}
-
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -768,7 +739,6 @@ body.dark-theme .filter-btn.active {
     padding: 28px;
     box-shadow: 0 4px 6px var(--shadow-color);
     cursor: pointer;
-    text-align: left;
     transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), opacity 0.3s ease;
 }
 
@@ -783,7 +753,7 @@ body.dark-theme .filter-btn.active {
 }
 
 .project-tag {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 11px;
     font-weight: 600;
     color: var(--accent-color);
@@ -809,7 +779,7 @@ body.dark-theme .filter-btn.active {
 }
 
 .view-detail-link {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 13.5px;
     font-weight: 600;
     color: var(--accent-color);
@@ -875,7 +845,7 @@ body.dark-theme .filter-btn.active {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 8px;
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 14px;
 }
 
@@ -892,14 +862,12 @@ body.dark-theme .filter-btn.active {
     font-size: 18px;
     color: var(--text-primary);
     margin-bottom: 12px;
-    text-align: left;
 }
 
 .timeline-details {
     padding-left: 16px;
     font-size: 14.5px;
     color: var(--text-secondary);
-    text-align: left;
 }
 
 .timeline-details li {
@@ -924,7 +892,6 @@ body.dark-theme .filter-btn.active {
     border-radius: 12px;
     padding: 32px;
     box-shadow: 0 4px 6px var(--shadow-color);
-    text-align: left;
 }
 
 .contact-info-card h3 {
@@ -972,7 +939,6 @@ body.dark-theme .filter-btn.active {
     border-radius: 12px;
     padding: 32px;
     box-shadow: 0 4px 6px var(--shadow-color);
-    text-align: left;
 }
 
 .form-row {
@@ -987,7 +953,7 @@ body.dark-theme .filter-btn.active {
 
 .form-group label {
     display: block;
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 13.5px;
     font-weight: 500;
     color: var(--text-secondary);
@@ -1001,7 +967,7 @@ body.dark-theme .filter-btn.active {
     border-radius: 6px;
     padding: 10px 14px;
     color: var(--text-primary);
-    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-body);
     font-size: 15px;
     transition: border-color var(--transition-fast), background var(--transition-fast);
 }
@@ -1013,7 +979,7 @@ body.dark-theme .filter-btn.active {
 }
 
 .submit-btn {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 600;
     color: var(--bg-color);
@@ -1025,23 +991,9 @@ body.dark-theme .filter-btn.active {
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-body.light-theme .submit-btn {
-    color: #ffffff;
-}
-body.dark-theme .submit-btn {
-    color: #090d16;
-}
-
 .submit-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px var(--accent-glow);
-}
-
-.submit-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
 }
 
 .form-feedback {
@@ -1144,7 +1096,6 @@ body.dark-theme .submit-btn {
 
 .modal-body {
     padding: 36px;
-    text-align: left;
 }
 
 .modal-title {
@@ -1156,7 +1107,7 @@ body.dark-theme .submit-btn {
 }
 
 .modal-sub {
-    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-heading);
     font-size: 13.5px;
     color: var(--accent-color);
     font-weight: 600;
