@@ -52,7 +52,7 @@ export const projectDetails: Record<string, Project> = {
     },
     stepsoft: {
         id: "stepsoft",
-        title: "stepsoft.in",
+        title: "stepsoft.com",
         category: "Shopify Liquid Customization",
         description: "An ethnic footwear online store selling mojaris, juttis, and Kolhapuris. The platform requires high visual fidelity and robust filtering parameters.",
         bullets: [
@@ -73,6 +73,54 @@ export const projectDetails: Record<string, Project> = {
             "Integrated customized cash-on-delivery (COD) form overlays, reducing purchase friction and cutting cart abandonment rates by 40%."
         ],
         tags: ["Shopify", "Dawn Theme", "JavaScript Core", "COD Form logic", "Cart API"]
+    },
+    tanvastr: {
+        id: "tanvastr",
+        title: "tanvastr.com",
+        category: "Shopify Custom Clothing Storefront",
+        description: "An upscale ethnic clothing and apparel brand storefront optimized for smooth variant choices, size charts, and high-speed collections rendering.",
+        bullets: [
+            "Designed premium custom sections using Liquid and custom CSS grid systems to feature seasonal wear.",
+            "Built a bespoke interactive size guide modal, reducing size-related customer returns by 25%.",
+            "Integrated dynamic product recommendations using Shopify's Search & Discovery app to boost average order value (AOV)."
+        ],
+        tags: ["Shopify", "Liquid Templates", "Custom CSS", "Variant Swatches", "Clothing Niche"]
+    },
+    vervixindia: {
+        id: "vervixindia",
+        title: "vervixindia.com",
+        category: "Shopify B2B & Wholesale Setup",
+        description: "An online store setup catering to wholesale clients and direct consumer transactions, featuring specialized pricing rules and bulk order sheets.",
+        bullets: [
+            "Built a custom wholesale registration form that automatically assigns corporate tax fields and customer groups.",
+            "Configured custom tier pricing discounts and minimum purchase order thresholds directly in the cart.",
+            "Integrated secure multi-currency payment options and tax invoice generation capabilities."
+        ],
+        tags: ["Shopify", "B2B Setup", "Bulk Order Logic", "Tax APIs", "Payment Gateways"]
+    },
+    manmoh: {
+        id: "manmoh",
+        title: "manmoh.com",
+        category: "WordPress & WooCommerce Customization",
+        description: "A luxury lifestyle and jewelry storefront requiring high visual fidelity, custom detail carousels, and high-speed page delivery.",
+        bullets: [
+            "Developed high-definition custom visual layouts using WooCommerce template overrides and custom PHP scripts.",
+            "Configured multi-currency switchers and local shipping rate rule matrices.",
+            "Improved database loading queries for product catalog grids, cutting page weight by 35%."
+        ],
+        tags: ["WordPress", "WooCommerce", "PHP Customization", "CSS Variables", "Speed Tuning"]
+    },
+    suitwala: {
+        id: "suitwala",
+        title: "suitwala.com",
+        category: "Shopify Custom Suits & Tailoring Platform",
+        description: "A customized Shopify storefront for bespoke suits and custom tailoring, featuring selection forms for cuffs, collars, and sizing metrics.",
+        bullets: [
+            "Programmed custom form selectors using Liquid and JavaScript, allowing customers to build custom suit bundles.",
+            "Configured a sticky product cart panel displaying real-time summary details of chosen customize options.",
+            "Integrated a customized booking calendar API for physical tailoring consultation appointments."
+        ],
+        tags: ["Shopify", "Theme Development", "Liquid Customizer", "JavaScript Form", "Tailoring App"]
     },
     "django-ecommerce": {
         id: "django-ecommerce",

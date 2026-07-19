@@ -30,7 +30,7 @@ export default function Home() {
 
     // Typing Subtitle hook
     const [typingText, setTypingText] = useState("");
-    const roles = ["Shopify Developer", "WordPress Developer", "Frontend Engineer", "E-Commerce Builder"];
+    const roles = ["Shopify Developer", "WordPress Developer", "E-Commerce Expert"];
     const typingIndexRef = useRef({ roleIdx: 0, charIdx: 0, isDeleting: false });
 
     // Typing Effect loop
@@ -127,7 +127,7 @@ export default function Home() {
     const filteredProjects = projectList.filter(project => {
         if (filterCategory === "all") return true;
         if (filterCategory === "shopify") return project.tags.includes("Shopify");
-        if (filterCategory === "wordpress") return project.tags.includes("WordPress");
+        if (filterCategory === "wordpress") return project.tags.includes("WordPress") || project.tags.includes("WooCommerce");
         if (filterCategory === "fullstack") return project.tags.includes("Python") || project.tags.includes("Django");
         return true;
     });
@@ -162,9 +162,6 @@ export default function Home() {
             {/* Header / Navbar */}
             <header className="navbar" id="main-header">
                 <div className="nav-container">
-                    <a href="#" className="logo" id="logo-brand">
-                        <span className="logo-accent">&lt;</span>Ankita<span className="logo-accent">/&gt;</span>
-                    </a>
                     <nav className="nav-menu" id="nav-links">
                         <a href="#about" className={`nav-link ${activeSection === "about" ? "active" : ""}`}>About</a>
                         <a href="#skills" className={`nav-link ${activeSection === "skills" ? "active" : ""}`}>Skills</a>
@@ -212,7 +209,7 @@ export default function Home() {
                             I am a <span className="typing-text" id="typing-sub">{typingText}</span><span className="cursor">|</span>
                         </h2>
                         <p className="hero-description">
-                            E-Commerce Developer & Backend Engineer based in India. I specialize in building custom Shopify stores, styling high-performance WordPress sites, and crafting interactive e-commerce shopping workflows that scale.
+                            Shopify &amp; E-Commerce Developer based in India. I specialize in building and customizing high-performance storefronts, theme development, third-party app integrations, and custom solutions using Shopify Liquid, React, and Node.js.
                         </p>
                         <div className="hero-ctas">
                             <a href="#projects" className="primary-btn">View My Work</a>
@@ -260,23 +257,23 @@ export default function Home() {
                         <div className="about-info">
                             <h3>Building High-Converting Storefronts</h3>
                             <p>
-                                I am a Shopify and WordPress developer with extensive expertise in platform customization, custom theme development, and digital storefront optimization.
+                                Shopify Developer with 1.5+ years of experience building and customizing e-commerce storefronts for 30+ clients using Shopify Liquid, HTML5, CSS3, JavaScript, React, and Node.js.
                             </p>
                             <p>
-                                Whether it is creating custom cart modules for Shopify discount platforms, designing pixel-perfect pages using WordPress frameworks, or designing full-stack e-commerce systems from scratch, I bridge the gap between design templates and high-converting code.
+                                Skilled in theme development, third-party app integration, payment gateway setup, and performance optimization. Resolved a critical plugin conflict that had taken a client&apos;s Shopify store fully offline, restoring full functionality, and engineered cost-effective custom solutions (e.g., a free Google Drive + Apps Script workflow) in place of paid subscription apps. Also works with WordPress/WooCommerce, backed by a supporting foundation in Python and Django.
                             </p>
                             <div className="about-highlights">
                                 <div className="highlight-item">
-                                    <span className="hl-number">40%+</span>
-                                    <span className="hl-label">CRO Improvements</span>
+                                    <span className="hl-number">1.5+</span>
+                                    <span className="hl-label">Years Experience</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="hl-number">1.2s</span>
-                                    <span className="hl-label">Avg Store Load Time</span>
+                                    <span className="hl-number">30+</span>
+                                    <span className="hl-label">Clients Served</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="hl-number">15+</span>
-                                    <span className="hl-label">Successful Stores Live</span>
+                                    <span className="hl-number">10+</span>
+                                    <span className="hl-label">Custom Storefronts</span>
                                 </div>
                             </div>
                         </div>
@@ -295,9 +292,9 @@ export default function Home() {
                                 </ul>
                             </div>
                             <div className="detail-card">
-                                <h4>Problem Solving</h4>
-                                <p>
-                                    Active on LeetCode with <strong>180+ solved algorithmic problems</strong> across data structures, graph theory, and dynamic programming. I apply logic-driven practices to e-commerce integrations.
+                                <h4>Areas of Expertise</h4>
+                                <p style={{ fontSize: "14.5px", lineHeight: "1.7", color: "var(--text-secondary)" }}>
+                                    Shopify Theme Development (Liquid) • React • Node.js • JavaScript • HTML5/CSS3 • Payment Gateway Integration • Performance Optimization • SEO &amp; CRO • WordPress/WooCommerce • Python &amp; Django (secondary) • Git/GitHub
                                 </p>
                             </div>
                         </div>
@@ -319,9 +316,9 @@ export default function Home() {
                             <ul className="skill-tags">
                                 <li>Liquid Templates</li>
                                 <li>Prestige / Dawn Customization</li>
-                                <li>Cart &amp; Checkout Layouts</li>
-                                <li>Shopify APIs</li>
-                                <li>App Integrations (Webkul, Loox)</li>
+                                <li>Checkout Customizations</li>
+                                <li>Shopify REST &amp; Admin APIs</li>
+                                <li>App Integrations &amp; Custom Scripts</li>
                             </ul>
                         </div>
                         {/* Skill Card 2 */}
@@ -334,8 +331,8 @@ export default function Home() {
                                 <li>Astra &amp; Custom Themes</li>
                                 <li>Elementor Customization</li>
                                 <li>WooCommerce Architecture</li>
-                                <li>PHP Development</li>
-                                <li>Plugin Configuration</li>
+                                <li>PHP Custom Templates</li>
+                                <li>Speed Tuning &amp; Database Optimization</li>
                             </ul>
                         </div>
                         {/* Skill Card 3 */}
@@ -345,11 +342,11 @@ export default function Home() {
                             </div>
                             <h3>Frontend Engineering</h3>
                             <ul className="skill-tags">
-                                <li>HTML5 &amp; semantic structure</li>
-                                <li>CSS3 &amp; responsive animation</li>
-                                <li>Flexbox / Grid layouts</li>
+                                <li>React Development</li>
                                 <li>JavaScript (ES6+)</li>
-                                <li>Cross-Browser QA testing</li>
+                                <li>HTML5 &amp; CSS3 Styling</li>
+                                <li>Bootstrap &amp; Tailwind utilities</li>
+                                <li>Responsive Layouts &amp; swatches</li>
                             </ul>
                         </div>
                         {/* Skill Card 4 */}
@@ -357,13 +354,13 @@ export default function Home() {
                             <div className="skill-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"></path></svg>
                             </div>
-                            <h3>Backend &amp; Databases</h3>
+                            <h3>Backend &amp; Tools</h3>
                             <ul className="skill-tags">
-                                <li>Python &amp; Django</li>
-                                <li>REST API design</li>
-                                <li>PostgreSQL &amp; SQL</li>
-                                <li>ORM Optimizations</li>
-                                <li>Redis Caching</li>
+                                <li>Node.js (for Shopify Apps)</li>
+                                <li>Python &amp; Django (supporting)</li>
+                                <li>PostgreSQL &amp; SQLite</li>
+                                <li>Git, GitHub source control</li>
+                                <li>Apps Script workflow automation</li>
                             </ul>
                         </div>
                         {/* Skill Card 5 */}
@@ -371,13 +368,13 @@ export default function Home() {
                             <div className="skill-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
                             </div>
-                            <h3>Marketing Tech</h3>
+                            <h3>E-Commerce &amp; CRO</h3>
                             <ul className="skill-tags">
-                                <li>Klaviyo / Mailchimp</li>
-                                <li>Facebook Pixel</li>
-                                <li>Google Analytics 4</li>
-                                <li>UpPromote Affiliate</li>
-                                <li>CRO Automations</li>
+                                <li>Payment Gateway Integrations</li>
+                                <li>Google Analytics 4 / FB Pixel</li>
+                                <li>Klaviyo / Mailchimp automated flows</li>
+                                <li>SEO (On-page structuring)</li>
+                                <li>CRO (Checkout funnel optimization)</li>
                             </ul>
                         </div>
                     </div>
@@ -428,7 +425,7 @@ export default function Home() {
                             >
                                 <div className="project-card-header">
                                     <span className="project-tag">
-                                        {project.id === "django-ecommerce" ? "Django" : (project.tags.includes("WordPress") ? "WordPress" : "Shopify")}
+                                        {project.id === "django-ecommerce" ? "Django" : (project.tags.includes("WordPress") || project.tags.includes("WooCommerce") ? "WordPress" : "Shopify")}
                                     </span>
                                     <h3 className="project-card-title">{project.title}</h3>
                                 </div>
@@ -455,9 +452,11 @@ export default function Home() {
                                 </div>
                                 <h3 className="timeline-title">Shopify &amp; WordPress Developer</h3>
                                 <ul className="timeline-details">
-                                    <li>Architected, customized, and maintained the main agency WordPress website using Astra and Elementor, utilizing custom CSS columns for speed and pixel-perfect design accuracy.</li>
-                                    <li>Engineered the Prestiges-themed discount Shopify site (halfpe.com), configuring custom checkout rules, variant selections, and multi-vendor integrations.</li>
-                                    <li>Optimized clients&apos; storefront speeds, decreasing average page load times from 2.8s to 1.2s, resulting in a 40% conversion rate increase.</li>
+                                    <li>Customized and maintained Shopify and WordPress storefronts for 20+ e-commerce clients, focusing on theme development and on-page SEO.</li>
+                                    <li>Built and adjusted Shopify Liquid themes using HTML5, CSS3, and JavaScript to improve usability and conversion paths.</li>
+                                    <li>Fixed a recurring photo-upload bug for a phone-case client by building a free Google Drive + Apps Script integration in place of a paid app, delivering auto-organized image links at zero added cost.</li>
+                                    <li>Developed custom-coded storefront features (wishlist, upsell/cross-sell) in place of paid third-party apps, cutting subscription costs.</li>
+                                    <li>Integrated marketing tools (Google Analytics, Facebook Pixel, Klaviyo, Mailchimp) and implemented secure, PCI-compliant payment gateways.</li>
                                 </ul>
                             </div>
                         </div>
@@ -472,25 +471,11 @@ export default function Home() {
                                 </div>
                                 <h3 className="timeline-title">Shopify &amp; WordPress Developer</h3>
                                 <ul className="timeline-details">
-                                    <li>Built and deployed sandwalkfootwear.com (premium footwear) and stepsoft.in (ethnic Mojaris/Kolhapuris storefront), structuring filters and swatches.</li>
-                                    <li>Modified Dawn theme sections for roxxindia.com, coding dynamic JS scripts for accessory variant bundle selectors and reduced checkout friction.</li>
-                                    <li>Integrated secure payment gateways, delivery webhooks (AfterShip), and customer support APIs (Gorgias, Yotpo).</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        {/* Timeline Item 3 */}
-                        <div className="timeline-item">
-                            <div className="timeline-badge"></div>
-                            <div className="timeline-panel">
-                                <div className="timeline-header">
-                                    <span className="timeline-company">Info2Tech Private Limited</span>
-                                    <span className="timeline-date">Apr 2024 – Jun 2024</span>
-                                </div>
-                                <h3 className="timeline-title">Python Developer Intern</h3>
-                                <ul className="timeline-details">
-                                    <li>Created robust backend microservices and REST APIs using Python, Django, and PostgreSQL.</li>
-                                    <li>Optimized database performance and query loads by 35% through Redis caching configurations and Django ORM improvements.</li>
+                                    <li>Customized and deployed responsive Shopify and WordPress themes for 10+ U.S.-based DTC and SaaS e-commerce clients.</li>
+                                    <li>Diagnosed and resolved a critical Veda plugin conflict that had taken a client&apos;s Shopify store fully offline, restoring full functionality.</li>
+                                    <li>Built responsive layouts with strong cross-browser compatibility using HTML5, CSS3, and JavaScript.</li>
+                                    <li>Integrated third-party apps (Gorgias, Loox, Yotpo, Aftership) with a focus on clean QA handoff.</li>
+                                    <li>Built reusable CSS component libraries that reduced repetitive development work across client projects.</li>
                                 </ul>
                             </div>
                         </div>
