@@ -101,14 +101,14 @@ export const projectDetails: Record<string, Project> = {
     manmoh: {
         id: "manmoh",
         title: "manmoh.com",
-        category: "WordPress & WooCommerce Customization",
-        description: "A luxury lifestyle and jewelry storefront requiring high visual fidelity, custom detail carousels, and high-speed page delivery.",
+        category: "Shopify Theme & Custom Layouts",
+        description: "A luxury lifestyle and jewelry storefront requiring prestige theme customization, custom detail carousels, and high-speed page delivery.",
         bullets: [
-            "Developed high-definition custom visual layouts using WooCommerce template overrides and custom PHP scripts.",
-            "Configured multi-currency switchers and local shipping rate rule matrices.",
-            "Improved database loading queries for product catalog grids, cutting page weight by 35%."
+            "Developed high-definition custom visual layouts using prestige theme overrides and Liquid scripting.",
+            "Configured secure checkout payment gateway APIs and custom multi-attribute variant swatches.",
+            "Optimized collection loading queries and cache parameters, cutting page load times by 35%."
         ],
-        tags: ["WordPress", "WooCommerce", "PHP Customization", "CSS Variables", "Speed Tuning"]
+        tags: ["Shopify", "Prestige Theme", "Liquid Templates", "CSS Variables", "Speed Tuning"]
     },
     suitwala: {
         id: "suitwala",

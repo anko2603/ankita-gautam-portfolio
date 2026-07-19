@@ -500,10 +500,6 @@ export default function Home() {
                                     <span className="icon">✉️</span>
                                     <a href="mailto:gautamankita2683@gmail.com">gautamankita2683@gmail.com</a>
                                 </div>
-                                <div className="info-link-item">
-                                    <span className="icon">📞</span>
-                                    <a href="tel:+918543834876">+91 8543834876</a>
-                                </div>
                             </div>
                         </div>
                         <div className="contact-form-card">
