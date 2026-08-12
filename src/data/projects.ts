@@ -5,6 +5,7 @@ export interface Project {
     description: string;
     bullets: string[];
     tags: string[];
+    liveUrl?: string;
     vercelUrl?: string;
     githubUrl?: string;
 }
@@ -13,6 +14,7 @@ export const projectDetails: Record<string, Project> = {
     halfpe: {
         id: "halfpe",
         title: "halfpe.com",
+        liveUrl: "https://halfpe.com",
         category: "Shopify Custom Theme & Apps Integration",
         description: "A high-traffic e-commerce discount platform. Customized to handle massive catalog selections and flash discount allocations seamlessly, focusing on a clean, conversions-first user interface.",
         bullets: [
@@ -27,6 +29,7 @@ export const projectDetails: Record<string, Project> = {
     weareadverta: {
         id: "weareadverta",
         title: "weareadverta.com",
+        liveUrl: "https://weareadverta.com",
         category: "WordPress Core & Layout customization",
         description: "The official agency portal for Adverta Growth Agency. Engineered to showcase corporate marketing case studies, interactive contact screens, and high-performance agency profiles.",
         bullets: [
@@ -40,6 +43,7 @@ export const projectDetails: Record<string, Project> = {
     sandwalk: {
         id: "sandwalk",
         title: "sandwalkfootwear.com",
+        liveUrl: "https://sandwalkfootwear.com",
         category: "Shopify Store Setup & Custom Styling",
         description: "A complete Shopify store deployment for a premium leather footwear manufacturer, designed to present their legacy and showcase footwear comfort.",
         bullets: [
@@ -52,7 +56,8 @@ export const projectDetails: Record<string, Project> = {
     },
     stepsoft: {
         id: "stepsoft",
-        title: "stepsoft.com",
+        title: "stepsoft.in",
+        liveUrl: "https://stepsoft.in",
         category: "Shopify Liquid Customization",
         description: "An ethnic footwear online store selling mojaris, juttis, and Kolhapuris. The platform requires high visual fidelity and robust filtering parameters.",
         bullets: [
@@ -62,21 +67,10 @@ export const projectDetails: Record<string, Project> = {
         ],
         tags: ["Shopify", "Liquid", "Advanced Filters", "Variant Swatches", "Performance Optimization"]
     },
-    roxxindia: {
-        id: "roxxindia",
-        title: "roxxindia.com",
-        category: "Shopify Dawn Theme Customization",
-        description: "A mobile phone covers and accessories online retailer prioritizing speed, volume checkouts, and mobile usability.",
-        bullets: [
-            "Extensively customized the default Shopify Dawn theme to display accessory grid filters.",
-            "Authored custom JavaScript code to handle bundle checkouts and automated buy-one-get-one discount rules in-cart.",
-            "Integrated customized cash-on-delivery (COD) form overlays, reducing purchase friction and cutting cart abandonment rates by 40%."
-        ],
-        tags: ["Shopify", "Dawn Theme", "JavaScript Core", "COD Form logic", "Cart API"]
-    },
     tanvastr: {
         id: "tanvastr",
         title: "tanvastr.com",
+        liveUrl: "https://tanvastr.com",
         category: "Shopify Custom Clothing Storefront",
         description: "An upscale ethnic clothing and apparel brand storefront optimized for smooth variant choices, size charts, and high-speed collections rendering.",
         bullets: [
@@ -89,6 +83,7 @@ export const projectDetails: Record<string, Project> = {
     vervixindia: {
         id: "vervixindia",
         title: "vervixindia.com",
+        liveUrl: "https://vervixindia.com",
         category: "Shopify B2B & Wholesale Setup",
         description: "An online store setup catering to wholesale clients and direct consumer transactions, featuring specialized pricing rules and bulk order sheets.",
         bullets: [
@@ -101,6 +96,7 @@ export const projectDetails: Record<string, Project> = {
     manmoh: {
         id: "manmoh",
         title: "manmoh.com",
+        liveUrl: "https://manmoh.com",
         category: "Shopify Theme & Custom Layouts",
         description: "A luxury lifestyle and jewelry storefront requiring prestige theme customization, custom detail carousels, and high-speed page delivery.",
         bullets: [
@@ -113,6 +109,7 @@ export const projectDetails: Record<string, Project> = {
     suitwala: {
         id: "suitwala",
         title: "suitwala.com",
+        liveUrl: "https://suitwala.com",
         category: "Shopify Custom Suits & Tailoring Platform",
         description: "A customized Shopify storefront for bespoke suits and custom tailoring, featuring selection forms for cuffs, collars, and sizing metrics.",
         bullets: [

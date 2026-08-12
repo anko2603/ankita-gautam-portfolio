@@ -57,7 +57,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </button>
                 <div className="modal-body">
                     <span className="project-tag">{getPrimaryTag()}</span>
-                    <h3 className="modal-title">{project.title}</h3>
+                    {project.liveUrl ? (
+                        <h3 className="modal-title">
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                                {project.title} <span style={{ fontSize: "16px", color: "var(--accent-color)" }}>↗</span>
+                            </a>
+                        </h3>
+                    ) : (
+                        <h3 className="modal-title">{project.title}</h3>
+                    )}
                     <div className="modal-sub">{project.category}</div>
                     
                     <div className="modal-image-mock">
@@ -80,7 +88,18 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                         ))}
                     </div>
                     
-                    <div className="modal-footer">
+                    <div className="modal-footer" style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "flex-end" }}>
+                        {project.liveUrl && (
+                            <a 
+                                href={project.liveUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="primary-btn"
+                                style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
+                            >
+                                Visit Live Site ↗
+                            </a>
+                        )}
                         <a 
                             href="#contact" 
                             className="secondary-btn" 

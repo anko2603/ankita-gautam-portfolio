@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef, FormEvent } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import ProjectModal from "@/components/ProjectModal";
+import ResumeModal from "@/components/ResumeModal";
 import { projectList, Project } from "@/data/projects";
 
 export default function Home() {
@@ -11,6 +12,9 @@ export default function Home() {
     
     // Mobile navigation menu toggle
     const [mobileOpen, setMobileOpen] = useState(false);
+
+    // Digital resume modal state
+    const [isResumeOpen, setIsResumeOpen] = useState(false);
     
     // Project modal state
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -30,7 +34,7 @@ export default function Home() {
 
     // Typing Subtitle hook
     const [typingText, setTypingText] = useState("");
-    const roles = ["Shopify Developer", "WordPress Developer", "E-Commerce Expert"];
+    const roles = ["Shopify Developer", "WordPress Developer", "E-Commerce Specialist", "Python & Django Developer"];
     const typingIndexRef = useRef({ roleIdx: 0, charIdx: 0, isDeleting: false });
 
     // Typing Effect loop
@@ -133,28 +137,54 @@ export default function Home() {
     });
 
     // Handle contact form submission
-    const handleFormSubmit = (e: FormEvent) => {
+    const handleFormSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setFormLoading(true);
         setFeedbackType(null);
 
-        // Simulation delay
-        setTimeout(() => {
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/gautamankita2683@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    subject: subject || "Portfolio Contact Form Inquiry",
+                    message,
+                    _subject: `[Portfolio Inquiry] ${subject || "New Hire / Contact Request from " + name}`,
+                    _template: "table"
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok || data.success === "true" || data.success === true) {
+                setFormLoading(false);
+                setFeedbackType("success");
+                setFeedbackMessage(`Thank you, ${name}! Your message has been sent directly to Ankita (gautamankita2683@gmail.com).`);
+                setName("");
+                setEmail("");
+                setSubject("");
+                setMessage("");
+            } else {
+                throw new Error(data.message || "Submission failed");
+            }
+        } catch (err) {
+            console.error("Form submit error, using mailto fallback:", err);
+            const mailtoUrl = `mailto:gautamankita2683@gmail.com?subject=${encodeURIComponent(subject || "Hire Me Inquiry")}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoUrl;
+
             setFormLoading(false);
             setFeedbackType("success");
-            setFeedbackMessage(`Thank you, ${name}. Your message has been sent successfully! I'll get back to you shortly.`);
-            
-            // Clear input fields
-            setName("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
+            setFeedbackMessage(`Opening mail client to send email to gautamankita2683@gmail.com!`);
+        }
 
-            // Clear feedback after 6 seconds
-            setTimeout(() => {
-                setFeedbackType(null);
-            }, 6000);
-        }, 1500);
+        setTimeout(() => {
+            setFeedbackType(null);
+        }, 8000);
     };
 
     return (
@@ -171,6 +201,13 @@ export default function Home() {
                     </nav>
                     <div className="nav-actions">
                         <ThemeToggle />
+                        <button 
+                            className="secondary-btn" 
+                            style={{ padding: "7px 14px", fontSize: "13px" }}
+                            onClick={() => setIsResumeOpen(true)}
+                        >
+                            📄 View Resume
+                        </button>
                         <a href="#contact" className="resume-btn" id="resume-download-btn">Hire Me</a>
                         <button 
                             className={`mobile-menu-btn ${mobileOpen ? "open" : ""}`} 
@@ -192,7 +229,15 @@ export default function Home() {
                 <a href="#skills" className="mobile-link" onClick={() => setMobileOpen(false)}>Skills</a>
                 <a href="#projects" className="mobile-link" onClick={() => setMobileOpen(false)}>Projects</a>
                 <a href="#experience" className="mobile-link" onClick={() => setMobileOpen(false)}>Experience</a>
+                <a href="#achievements" className="mobile-link" onClick={() => setMobileOpen(false)}>Achievements</a>
                 <a href="#contact" className="mobile-link" onClick={() => setMobileOpen(false)}>Contact</a>
+                <button 
+                    className="mobile-link" 
+                    style={{ background: "none", border: "none", textAlign: "left", color: "var(--accent-color)", cursor: "pointer" }}
+                    onClick={() => { setMobileOpen(false); setIsResumeOpen(true); }}
+                >
+                    📄 View Digital Resume
+                </button>
                 <a href="#contact" className="mobile-resume-btn" onClick={() => setMobileOpen(false)}>Hire Me</a>
             </div>
 
@@ -209,20 +254,27 @@ export default function Home() {
                             I am a <span className="typing-text" id="typing-sub">{typingText}</span><span className="cursor">|</span>
                         </h2>
                         <p className="hero-description">
-                            Shopify &amp; E-Commerce Developer based in India. I specialize in building and customizing high-performance storefronts, theme development, third-party app integrations, and custom solutions using Shopify Liquid, React, and Node.js.
+                            Shopify &amp; E-Commerce Developer based in India with 1.5+ years of experience building high-converting storefronts for 30+ clients. Skilled in Shopify Liquid, React, Node.js, and WordPress, backed by Python &amp; Django.
                         </p>
-                        <div className="hero-ctas">
+                        <div className="hero-ctas" style={{ gap: "12px", flexWrap: "wrap" }}>
                             <a href="#projects" className="primary-btn">View My Work</a>
+                            <button 
+                                className="secondary-btn"
+                                onClick={() => setIsResumeOpen(true)}
+                                style={{ cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "6px" }}
+                            >
+                                📄 View Resume
+                            </button>
                             <a href="#contact" className="secondary-btn">Let&apos;s Connect</a>
                         </div>
                         <div className="social-links">
-                            <a href="https://github.com/gautamankita2683" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-link">
+                            <a href="https://github.com/anko2603/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                             </a>
-                            <a href="https://linkedin.com/in/gautamankita2683" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">
+                            <a href="https://www.linkedin.com/in/ankitagautam0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                             </a>
-                            <a href="https://leetcode.com/u/gautamankita2683" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="social-link">
+                            <a href="https://leetcode.com/u/gautamankita2603/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="social-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="lc-svg"><path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.77 9.77a1.375 1.375 0 0 0 0 1.942l4 4a1.375 1.375 0 0 0 1.94 0l9.77-9.77a1.375 1.375 0 0 0 0-1.942l-4-4A1.374 1.374 0 0 0 13.483 0zM4.057 11.232l9.043-9.043 3.086 3.086-9.042 9.042-3.087-3.085zm12.016 1.488a5.534 5.534 0 0 1-5.53 5.53 5.534 5.534 0 0 1-5.53-5.53c0-1.285.45-2.47 1.202-3.418L4.85 7.936A7.472 7.472 0 0 0 2.543 12.72c0 4.148 3.36 7.51 7.509 7.51 4.148 0 7.51-3.362 7.51-7.51a7.461 7.461 0 0 0-2.308-4.783l-1.365 1.365a5.533 5.533 0 0 1 1.204 3.418zm2.646-6.177L17.354 7.91A9.452 9.452 0 0 1 20.05 12.72c0 5.253-4.257 9.51-9.51 9.51-5.253 0-9.51-4.257-9.51-9.51A9.452 9.452 0 0 1 3.73 7.91L2.365 6.543A11.439 11.439 0 0 0 .543 12.72c0 6.353 5.158 11.51 11.509 11.51 6.352 0 11.51-5.157 11.51-11.51a11.439 11.439 0 0 0-1.822-6.177z"/></svg>
                             </a>
                         </div>
@@ -427,10 +479,46 @@ export default function Home() {
                                     <span className="project-tag">
                                         {project.id === "django-ecommerce" ? "Django" : (project.tags.includes("WordPress") || project.tags.includes("WooCommerce") ? "WordPress" : "Shopify")}
                                     </span>
-                                    <h3 className="project-card-title">{project.title}</h3>
+                                    <h3 className="project-card-title">
+                                        {project.liveUrl ? (
+                                            <a 
+                                                href={project.liveUrl} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                onClick={(e) => e.stopPropagation()}
+                                                style={{ color: "inherit", textDecoration: "none" }}
+                                                title={`Visit ${project.title} live website`}
+                                            >
+                                                {project.title} <span style={{ fontSize: "14px", color: "var(--accent-color)" }}>↗</span>
+                                            </a>
+                                        ) : (
+                                            project.title
+                                        )}
+                                    </h3>
                                 </div>
                                 <p className="project-card-excerpt">{project.description}</p>
-                                <span className="view-detail-link">View Implementation &rarr;</span>
+                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "12px" }}>
+                                    <span className="view-detail-link">View Implementation &rarr;</span>
+                                    {project.liveUrl && (
+                                        <a 
+                                            href={project.liveUrl} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            style={{ 
+                                                fontSize: "13px", 
+                                                fontWeight: 600, 
+                                                color: "var(--accent-color)", 
+                                                textDecoration: "none",
+                                                padding: "4px 10px",
+                                                borderRadius: "4px",
+                                                backgroundColor: "var(--accent-glow)"
+                                            }}
+                                        >
+                                            Live Site ↗
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -478,6 +566,57 @@ export default function Home() {
                                     <li>Built reusable CSS component libraries that reduced repetitive development work across client projects.</li>
                                 </ul>
                             </div>
+                        </div>
+
+                        {/* Timeline Item 3 */}
+                        <div className="timeline-item">
+                            <div className="timeline-badge"></div>
+                            <div className="timeline-panel">
+                                <div className="timeline-header">
+                                    <span className="timeline-company">Info2Tech Private Limited</span>
+                                    <span className="timeline-date">Apr 2024 – Jun 2024</span>
+                                </div>
+                                <h3 className="timeline-title">Python Developer Intern</h3>
+                                <ul className="timeline-details">
+                                    <li>Built scalable backend RESTful API endpoints utilizing Python, Django, and PostgreSQL with microservices architecture.</li>
+                                    <li>Optimized database performance, reducing query execution times by 35% using Django ORM optimization and Redis caching implementations.</li>
+                                    <li>Applied advanced data structures and algorithms to resolve complex computational tasks, achieving 2x performance speedups.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Key Achievements & Technical Impact */}
+            <section className="achievements-section" id="achievements" style={{ padding: "60px 0", backgroundColor: "rgba(255, 255, 255, 0.01)" }}>
+                <div className="container scroll-reveal">
+                    <h2 className="section-title">Key Achievements &amp; Problem Solving</h2>
+                    <p className="section-desc">Engineering impact through cost optimization, crisis resolution, and algorithmic rigor.</p>
+                    
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginTop: "32px" }}>
+                        <div className="detail-card" style={{ borderLeft: "4px solid var(--accent-color)" }}>
+                            <div style={{ fontSize: "28px", marginBottom: "12px" }}>⚡</div>
+                            <h4 style={{ fontSize: "18px", color: "var(--text-primary)", marginBottom: "8px" }}>Store Crisis Recovery</h4>
+                            <p style={{ fontSize: "14px", color: "var(--text-secondary)", lineHeight: "1.6" }}>
+                                Diagnosed and resolved a critical Veda plugin conflict that had brought a client&apos;s Shopify store completely offline. Restored 100% store functionality and checkout availability with zero data loss.
+                            </p>
+                        </div>
+
+                        <div className="detail-card" style={{ borderLeft: "4px solid #10b981" }}>
+                            <div style={{ fontSize: "28px", marginBottom: "12px" }}>💡</div>
+                            <h4 style={{ fontSize: "18px", color: "var(--text-primary)", marginBottom: "8px" }}>Zero-Cost Custom Tooling</h4>
+                            <p style={{ fontSize: "14px", color: "var(--text-secondary)", lineHeight: "1.6" }}>
+                                Replaced a costly monthly third-party photo upload app for a custom phone-case retailer by building a free Google Drive + Google Apps Script integration, delivering auto-organized image links at zero added cost.
+                            </p>
+                        </div>
+
+                        <div className="detail-card" style={{ borderLeft: "4px solid #f59e0b" }}>
+                            <div style={{ fontSize: "28px", marginBottom: "12px" }}>🧩</div>
+                            <h4 style={{ fontSize: "18px", color: "var(--text-primary)", marginBottom: "8px" }}>180+ LeetCode DSA Solved</h4>
+                            <p style={{ fontSize: "14px", color: "var(--text-secondary)", lineHeight: "1.6" }}>
+                                Solved 180+ algorithmic and data structure problems on LeetCode covering Dynamic Programming, Graph Theory, and System Design to maintain top-tier problem-solving efficiency.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -582,10 +721,15 @@ export default function Home() {
                 </div>
             </footer>
 
-            {/* Modal Dialog */}
+            {/* Modal Dialogs */}
             <ProjectModal 
                 project={selectedProject} 
                 onClose={() => setSelectedProject(null)} 
+            />
+
+            <ResumeModal 
+                isOpen={isResumeOpen}
+                onClose={() => setIsResumeOpen(false)}
             />
         </>
     );
